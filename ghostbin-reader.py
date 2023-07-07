@@ -9,7 +9,7 @@ url = input("https://ghostbin.me/")
 
 packet = requests.get(f"https://ghostbin.me/{url}")
 if (start_text_match not in packet.text) or (end_text_match not in packet.text):
-    exit("url is broken for non-existent - exiting")
+    exit("url is broken or non-existent - exiting")
 
 start = packet.text.find(start_text_match) + len(start_text_match)
 end = packet.text.find(end_text_match)
